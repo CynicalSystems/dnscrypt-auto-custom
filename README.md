@@ -3,6 +3,9 @@ dnscrypt-auto-custom
 
 A customized script for installing and automatically configuring DNSCrypt on Debian Linux-based systems.
 
+## This is a customized script specific for our deployments. Free software, no warranties, etc, etc.
+## If you don't know exactly what you are doing please use the original repo located at: https://github.com/simonclausen/dnscrypt-autoinstall
+
 # Description
 
 This script will automatically and securely set up DNSCrypt as a background service that runs at system startup using [DNSCrypt-proxy](https://github.com/jedisct1/dnscrypt-proxy/), the [libsodium](https://github.com/jedisct1/libsodium) cryptography library, and the DNSCrypt service provider of your choice. The script also will set up dnsmasq as a cache for dnscrypt, and all outgoing port 53 traffic will be force-redirected to it with iptables DNAT.
