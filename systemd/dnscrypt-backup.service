@@ -9,10 +9,13 @@ PartOf=dnscrypt-autoinstall.service
 [Service]
 EnvironmentFile=/etc/systemd/system/dnscrypt-autoinstall.conf
 ExecStart=/usr/local/sbin/dnscrypt-proxy \
-	 --user=${DNSCRYPT_USER} \
-	 --ephemeral-keys \
-	 --resolver-name=${DNSCRYPT_RESOLVER2} \
-	 --local-address=${DNSCRYPT_LOCALIP2}:${DNSCRYPT_LOCALPORT2}
+         --ephemeral-keys \
+         --user=${DNSCRYPT_USER} \
+         --provider-key=${DNSCRYPT_RESOLVER2_KEY} \
+         --provider-name=${DNSCRYPT_RESOLVER2_NAME} \
+         --resolver-address=${DNSCRYPT_RESOLVER2_ADDR} \
+         --local-address=${DNSCRYPT_RESOLVER2_LOCAL} \
+         --pidfile=${DNSCRYPT_RESOLVER2_PID} 
 Restart=on-abort
 
 [Install]
