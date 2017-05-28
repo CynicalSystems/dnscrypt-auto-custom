@@ -13,7 +13,9 @@ The script supports Debian-based (Debian, Ubuntu, Linux Mint) distributions. The
 | --- | --- |
 
 wget https://raw.githubusercontent.com/CynicalSystems/dnscrypt-auto-custom/master/dnscrypt-auto-custom
+
 chmod +x dnscrypt-auto-custom
+
 su -c ./dnscrypt-auto-custom
 
 ## Troubleshooting
