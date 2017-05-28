@@ -15,10 +15,10 @@ The script supports Debian-based (Debian, Ubuntu, Linux Mint) distributions. The
 | Note | Scripts with sysvinit support were moved to the "legacy" branch (CentOS 6, Debian 7, Ubuntu < 16.04) |
 | --- | --- |
 
+wget https://raw.githubusercontent.com/CynicalSystems/dnscrypt-auto-custom/master/dnscrypt-auto-custom.sha1
 wget https://raw.githubusercontent.com/CynicalSystems/dnscrypt-auto-custom/master/dnscrypt-auto-custom
-
+sha1sum -c dnscrypt-auto-custom.sha1; if [[ $? -eq 1 ]]; then echo "Doanload is corrupt!"; exit 1; fi
 chmod +x dnscrypt-auto-custom
-
 su -c ./dnscrypt-auto-custom
 
 ## Troubleshooting
