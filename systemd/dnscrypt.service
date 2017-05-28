@@ -9,12 +9,12 @@ Wants=network.target dnscrypt-backup.service
 EnvironmentFile=/etc/systemd/system/dnscrypt.conf
 ExecStart=/usr/local/sbin/dnscrypt-proxy \
          --ephemeral-keys \
-         --user=dnscrypt \
-         --provider-key=3133:72AD:5956:32C2:416B:872F:098F:851B:DDB9:6528:4C6C:BE9A:4F19:0964:30DB:A95A \
-         --provider-name=2.dnscrypt-cert.cryptostorm.is \
-         --resolver-address=108.62.19.131:443 \
-         --local-address=127.0.0.1:2053 \
-         --pidfile=/var/tmp/dnscrypt.pid 
+         --user=${DNSCRYPT_USER} \
+         --provider-key=${DNSCRYPT_RESOLVER_KEY} \
+         --provider-name=${DNSCRYPT_RESOLVER_NAME} \
+         --resolver-address=${DNSCRYPT_RESOLVER_ADDR} \
+         --local-address=${DNSCRYPT_RESOLVER_LOCAL} \
+         --pidfile=${DNSCRYPT_RESOLVER_PID} 
 Restart=on-abort
 
 [Install]
