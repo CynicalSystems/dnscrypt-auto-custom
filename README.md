@@ -19,11 +19,13 @@ wget https://raw.githubusercontent.com/CynicalSystems/dnscrypt-auto-custom/maste
 
 wget https://raw.githubusercontent.com/CynicalSystems/dnscrypt-auto-custom/master/dnscrypt-auto-custom
 
-sha1sum -c dnscrypt-auto-custom.sha1; if [[ $? -eq 1 ]]; then echo "Doanload is corrupt!"; exit 1; fi
+sha1sum -c dnscrypt-auto-custom.sha1; if [[ $? -eq 1 ]]; then echo "Doanload is corrupt!"; else
 
 chmod +x dnscrypt-auto-custom
 
 su -c ./dnscrypt-auto-custom
+
+fi
 
 ## Troubleshooting
 
